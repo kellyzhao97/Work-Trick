@@ -1,0 +1,88 @@
+Sub oct_data()
+
+'3366 HK Equity
+    Worksheets("REMOTE").Select
+    Range("B8:G8").Copy
+    Worksheets("04").Range("B2:G2").PasteSpecial Paste:=xlPasteValues
+    
+'1569 HK Equity
+    Worksheets("REMOTE").Select
+    Range("H8:M8").Copy
+    Worksheets("04").Range("B4:G4").PasteSpecial Paste:=xlPasteValues
+    
+'2048 HK Equity
+    Worksheets("REMOTE").Select
+    Range("N8:S8").Copy
+    Worksheets("04").Range("B5:G5").PasteSpecial Paste:=xlPasteValues
+    
+'1628 HK Equity
+    Worksheets("REMOTE").Select
+    Range("T8:Y8").Copy
+    Worksheets("04").Range("B6:G6").PasteSpecial Paste:=xlPasteValues
+    
+'780 HK Equity
+    Worksheets("REMOTE").Select
+    Range("Z8:AE8").Copy
+    Worksheets("04").Range("B7:G7").PasteSpecial Paste:=xlPasteValues
+    
+'165 HK Equity
+    Worksheets("REMOTE").Select
+    Range("AF8:AK8").Copy
+    Worksheets("04").Range("B9:G9").PasteSpecial Paste:=xlPasteValues
+    
+'600622 CH Equity
+    Worksheets("REMOTE").Select
+    Range("AL8:AQ8").Copy
+    Worksheets("04").Range("B10:G10").PasteSpecial Paste:=xlPasteValues
+    
+'978 HK Equity
+    Worksheets("REMOTE").Select
+    Range("AR8:AW8").Copy
+    Worksheets("04").Range("B11:G11").PasteSpecial Paste:=xlPasteValues
+    
+'1911 HK Equity
+    Worksheets("REMOTE").Select
+    Range("AX8:BC8").Copy
+    Worksheets("04").Range("B12:G12").PasteSpecial Paste:=xlPasteValues
+    
+'123 HK Equity
+    Worksheets("REMOTE").Select
+    Range("BD8:BI8").Copy
+    Worksheets("04").Range("B13:G13").PasteSpecial Paste:=xlPasteValues
+    
+'000987 CH Equity
+    Worksheets("REMOTE").Select
+    Range("BJ8:BO8").Copy
+    Worksheets("04").Range("B14:G14").PasteSpecial Paste:=xlPasteValues
+    
+'HSI
+    Worksheets("REMOTE").Select
+    Range("B20:C20").Copy
+    Worksheets("04").Range("B16:C16").PasteSpecial Paste:=xlPasteValues
+
+'HSCE
+    Worksheets("REMOTE").Select
+    Range("E20:F20").Copy
+    Worksheets("04").Range("B17:C17").PasteSpecial Paste:=xlPasteValues
+    
+'HSNP
+    Worksheets("REMOTE").Select
+    Range("H20:I20").Copy
+    Worksheets("04").Range("B18:C18").PasteSpecial Paste:=xlPasteValues
+
+'Divide Column D & G
+    Dim myVal As Range
+    
+    For Each myVal In Worksheets("04").Range("D2,D4:D7,D9:D14")
+        myVal = myVal.Value / 10000
+    Next myVal
+    
+    For Each myVal In Worksheets("04").Range("G2,G4:G7,G9:G14")
+        myVal = myVal.Value / 100
+    Next myVal
+    
+'Format Column
+    Worksheets("04").Range("F14").Value = "N/A"
+    Worksheets("04").Range("B2:G18").NumberFormat = "#,##0.00"
+    
+End Sub
